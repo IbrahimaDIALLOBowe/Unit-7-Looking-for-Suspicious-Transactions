@@ -4,14 +4,14 @@
 
 CREATE TABLE "card_holder" (
     "id" INT   NOT NULL,
-    "name" STRING   NOT NULL,
+    "name" VARCHAR(255)   NOT NULL,
     CONSTRAINT "pk_card_holder" PRIMARY KEY (
         "id"
      )
 );
 
 CREATE TABLE "credit_card" (
-    "card" STRING   NOT NULL,
+    "card" VARCHAR(255)   NOT NULL,
     "id_card_holder" INT   NOT NULL,
     CONSTRAINT "pk_credit_card" PRIMARY KEY (
         "card"
@@ -20,7 +20,7 @@ CREATE TABLE "credit_card" (
 
 CREATE TABLE "merchant_category" (
     "id" INT   NOT NULL,
-    "name" STRING   NOT NULL,
+    "name" VARCHAR(255)   NOT NULL,
     CONSTRAINT "pk_merchant_category" PRIMARY KEY (
         "id"
      )
@@ -28,7 +28,7 @@ CREATE TABLE "merchant_category" (
 
 CREATE TABLE "merchant" (
     "id" INT   NOT NULL,
-    "name" STRING   NOT NULL,
+    "name" VARCHAR(255)   NOT NULL,
     "id_merchant_category" INT   NOT NULL,
     CONSTRAINT "pk_merchant" PRIMARY KEY (
         "id"
@@ -39,7 +39,7 @@ CREATE TABLE "transactions" (
     "id" INT   NOT NULL,
     "date" DATE   NOT NULL,
     "amount" FLOAT   NOT NULL,
-    "card" STRING   NOT NULL,
+    "card" VARCHAR(255)   NOT NULL,
     "id_merchant" INT   NOT NULL,
     CONSTRAINT "pk_transactions" PRIMARY KEY (
         "id"
